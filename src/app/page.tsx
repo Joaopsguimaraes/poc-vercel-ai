@@ -3,7 +3,7 @@ import { Chat } from '@/components/chat/chat';
 
 export default function Home() {
   return (
-    <div className='flex min-h-screen items-center justify-center bg-slate-50'>
+    <div className='mt-5 flex items-center justify-center bg-slate-50'>
       <Chat />
     </div>
   );
