@@ -4,6 +4,8 @@ import { Inter } from "next/font/google"
 
 import "./globals.css"
 
+import { AuthProvider } from "@/providers/auth-provider"
+
 import { cn } from "@/lib/utils"
 import { SiteFooter } from "@/components/layout/site-footer"
 import { SiteHeader } from "@/components/layout/site-header"
@@ -29,8 +31,10 @@ export default function RootLayout({
           inter.className
         )}
       >
-        <SiteHeader />
-        <div className="relative flex flex-col">{children}</div>
+        <AuthProvider>
+          <SiteHeader />
+          <div className="relative flex flex-col">{children}</div>
+        </AuthProvider>
       </body>
     </html>
   )

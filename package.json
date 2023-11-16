@@ -36,6 +36,7 @@
     "class-variance-authority": "^0.7.0",
     "clsx": "^2.0.0",
     "cmdk": "^0.2.0",
+    "eslint-config-next": "^14.0.2",
     "eslint-config-prettier": "^9.0.0",
     "eslint-config-react": "^1.1.7",
     "eslint-config-standard": "^17.1.0",
@@ -44,9 +45,11 @@
     "eslint-plugin-n": "^16.3.1",
     "eslint-plugin-prettier": "^5.0.1",
     "eslint-plugin-promise": "^6.1.1",
+    "eslint-plugin-react": "^7.33.2",
     "eslint-plugin-react-hooks": "^4.6.0",
     "eslint-plugin-tailwindcss": "^3.13.0",
     "next": "14.0.2",
+    "next-auth": "^4.24.5",
     "openai": "^4.19.0",
     "openai-edge": "^1.2.2",
     "prettier": "^3.1.0",
@@ -55,9 +58,7 @@
     "react-hook-form": "^7.48.2",
     "tailwind-merge": "^2.0.0",
     "tailwindcss-animate": "^1.0.7",
-    "zod": "^3.22.4",
-    "eslint-plugin-react": "^7.33.2",
-    "eslint-config-next": "^14.0.2"
+    "zod": "^3.22.4"
   },
   "devDependencies": {
     "@types/node": "^20",

@@ -1,5 +1,8 @@
+"use client"
+
 import Link from "next/link"
 import { siteConfig } from "@/util/config"
+import { useSession } from "next-auth/react"
 
 import { cn } from "@/lib/utils"
 
@@ -8,8 +11,10 @@ import { Icons } from "../ui/icons"
 import { MainNav } from "./main-nav"
 
 export function SiteHeader() {
+  const { data: session } = useSession()
+
   return (
-    <header className="bg-background/95 supports-[backdrop-filter]:bg-background/60 sticky top-0 z-50 w-full border-b backdrop-blur">
+    <header className={cn(session ? "bg-background/95 supports-[backdrop-filter]:bg-background/60 sticky top-0 z-50 w-full border-b backdrop-blur" : "hidden")}>
       <div className="container flex h-12 items-center">
         <MainNav />
         <div className="flex flex-1 items-center justify-between space-x-2 md:justify-end">

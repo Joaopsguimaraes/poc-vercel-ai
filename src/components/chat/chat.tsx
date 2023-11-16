@@ -2,6 +2,7 @@
 
 import React from "react"
 import { useChat } from "ai/react"
+import { useSession } from "next-auth/react"
 
 import { Avatar, AvatarFallback, AvatarImage } from "../ui/avatar"
 import { Button } from "../ui/button"
@@ -20,6 +21,8 @@ export function Chat() {
   const { messages, input, handleInputChange, handleSubmit } = useChat({
     api: "/api/chat",
   })
+
+  const { data: session } = useSession()
 
   return (
     <Card className="sm:w-[250px] md:w-[600px] lg:w-[800px]">
@@ -40,7 +43,7 @@ export function Chat() {
                 {message.role === "user" && (
                   <Avatar>
                     <AvatarFallback>US</AvatarFallback>
-                    <AvatarImage src="" />
+                    <AvatarImage src={session?.user?.image ?? ""} />
                   </Avatar>
                 )}
                 {message.role === "assistant" && (
@@ -51,7 +54,9 @@ export function Chat() {
                 )}
                 <p className="text-justify leading-relaxed">
                   <span className="block font-bold text-slate-700">
-                    {message.role === "user" ? "Usuário" : "Joao Guimaraes"}
+                    {message.role === "user"
+                      ? session?.user?.name
+                      : "Joao Guimaraes"}
                   </span>
                   {message.content}
                 </p>
