@@ -22,7 +22,7 @@ export function Chat(){
         <ScrollArea className='h-[500px] w-full space-y-5'>
           {messages.map((message) => {
             return (
-              <div key={message.id} className='flex gap-5 my-2 text-slate-600 text-sm'>
+              <div key={message.id} className='my-2 flex gap-5 text-sm text-slate-600'>
                 {message.role === 'user' && (
                   <Avatar>
                     <AvatarFallback>JG</AvatarFallback>
@@ -45,7 +45,7 @@ export function Chat(){
         </ScrollArea>
       </CardContent>
       <CardFooter>
-        <form className='items-center gap-2 flex w-full' onSubmit={handleSubmit}>
+        <form className='flex w-full items-center gap-2' onSubmit={handleSubmit}>
           <Input 
             placeholder='Como posso lhe ajudar?'
             value={input}
