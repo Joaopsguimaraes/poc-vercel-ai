@@ -14,7 +14,7 @@ export function SignInWithGoogleButton() {
 
   return (
     <Button variant="outline" type="button" onClick={signInGoogle}>
-      <Icons.google className="mr-2 h-4 w-4" />
+      <Icons.google className="mr-2 h-5 w-5" />
       Google
     </Button>
   )
